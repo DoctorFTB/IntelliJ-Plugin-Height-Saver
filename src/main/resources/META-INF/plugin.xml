@@ -1,0 +1,25 @@
+<idea-plugin>
+    <id>ftblag.height-saver</id>
+
+    <name>Height Saver</name>
+
+    <vendor email="ftblag@ftblag.ftblag">ftblag</vendor>
+
+    <description><![CDATA[
+    Activate picked (configurable) tool windows and set height, based on active tool window or configurable value. 
+  ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationService serviceImplementation="ftblag.heightsaver.HSState"/>
+    </extensions>
+
+    <actions>
+        <group id="ftblag.height-saver.height" text="Height" description="Height">
+            <add-to-group group-id="MainMenu" anchor="last"/>
+            <action class="ftblag.heightsaver.RestoreAction" id="ftblag.height-saver.height.Restore" text="Restore"/>
+            <action class="ftblag.heightsaver.SettingsAction" id="ftblag.height-saver.height.Settings" text="Settings"/>
+        </group>
+    </actions>
+</idea-plugin>
